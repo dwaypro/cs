@@ -1,0 +1,32 @@
+O(n);
+O(1);
+O(n^2);
+
+
+smaller terms don't matter
+
+Arithmetic operations are constant.
+Variable assignment is constant.
+Accessing elements in an array or object is constant.
+In a loop the complexity is the length of the lop times the
+complexity of whatever happens inside of the loop. 
+
+
+function logAtLeast5(n){
+    for(var i = 1; i <= Math.max(5,n); i++){
+        console.log(i);
+    }
+}
+
+o(n)
+
+function logAtMost5(n){
+    for(var i = 1; i <= Math.min(5,n); i++){
+        console.log(i);
+    }
+}
+
+as n grows it doesn't matter because we are taling the min. 
+It will always only run 5 times. so n is constant.
+O(1);
+
