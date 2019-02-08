@@ -60,6 +60,35 @@ Object.values - O(N);
 Object.entries - O(N);
 Object.hasOwnProperty - O(1);
 
+2.) Array, ordered lists, when you need order.
+let names = ["Michael", "Melissa", "Andrea"];
+
+Insertion - depends;
+ - pushing to an array is constant time. 
+ - inserting at at the begining of the array, causes the array to reindex. 
+ - push and pop are always faster
+  
+Removal - depends;
+ - removing from the begining causes the array to reindex its contents  
+ - push and pop are always faster
+
+Searching O(N);
+Access - O(1);
+
+push - o(1);
+pop - O(1);
+shift - O(N);
+unshift - O(N);
+concat - O(N);
+slice - O(N);
+splice - O(N);
+sort - O(N * log N);
+forEach/map/filter/reduce/etc - O(N);
+
+
+
+
+
 
 
 
