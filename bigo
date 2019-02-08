@@ -30,3 +30,12 @@ as n grows it doesn't matter because we are taling the min.
 It will always only run 5 times. so n is constant.
 O(1);
 
+
+Space complexity
+Most primitives (booleans, numbers, undefined, null ) are constant Space
+Strings require O(n) space where n is the string length.
+reference types are generally O(n) where n is the length for arrays or the number of keys
+
+
+
+
