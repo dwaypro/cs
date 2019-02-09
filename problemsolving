@@ -1,0 +1,50 @@
+Strategies.
+
+Define what an algorithm is
+devise a plan to solve algorithms
+compare and contrast problem solving patterns
+including frequency counters two pointer problems
+and divide and conquer
+
+
+An algorithm 
+
+a process or set of steps to accomplish a certain task.
+
+almost everything you do in programming involves
+some kind of algorithm
+foundation for being a scucessful problem solving and developer
+
+1.) Devise a plan for solving problems.
+2.) Master common problem solving patterns.
+
+
+- understand the problem.
+- explore concrete examples.
+- break it down.
+- solve/simplify problem.
+- look back and refactor.
+
+Can I restate the problem in my own words
+what are the inputs that go into the problems
+what are the outputs that should come from the solution
+
+can the outputs be determined from the inputs?
+Do I have enough information to solve the problem
+
+how should I label the important pieces of data that are part of the problem.
+
+//
+    Write a function which takes two numbers and return their sum
+ 
+can you check the result?
+can you derive the result differently?
+can you understand it at a glance?
+can you use the result or method for some other problem?
+can you improve the performance of your solution?
+can you think of other ways to refactor?
+how have other people solved this problem?
+
+
+
+
