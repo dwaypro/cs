@@ -1,6 +1,12 @@
 const fs = require('fs');
 const os = require('os');
-
 var user = os.userInfo();
-console.log('TCL: user', user)
-console.log('starting app');
+const notes = require('./notes.js')
+
+
+notes.log();
+// console.log('notes', notes.log());
+var add = notes.add(1, 2);
+console.log('TCL: add', add)
+
+
