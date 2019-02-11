@@ -2,7 +2,22 @@ const fs = require('fs');
 const _ = require('lodash');
 const yargs = require('yargs');
 const notes = require('./notes.js');
-const argv = yargs.argv;
+
+const argv = yargs.command('add', 'adds a new note', {
+  title: {
+    describe: 'title of note',
+    demand: true,
+    alias: 't'
+  },
+  body:{
+    describe: 'content of body',
+    demand: true,
+    alias: 'b'
+  }
+})
+.help()
+.argv;
+
 var command = argv._[0];
 
 if (command === 'add') {
@@ -12,8 +27,7 @@ if (command === 'add') {
   var allNotes = notes.getAll();
   console.log(`${allNotes.length}, note(s).`);
   allNotes.forEach((note) => {
-    console.log(`title: ${note.title} + body: ${note.body}`);
-    
+    console.log(`title: ${note.title} + body: ${note.body}`); 
   })
   
 
