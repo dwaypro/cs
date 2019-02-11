@@ -9,7 +9,14 @@ if (command === 'add') {
   var note = notes.addNote(argv.title, argv.body);
   console.log('note submitted ==>', note);
 } else if (command === 'list') {
-  notes.getAll();
+  var allNotes = notes.getAll();
+  console.log(`${allNotes.length}, note(s).`);
+  allNotes.forEach((note) => {
+    console.log(`title: ${note.title} + body: ${note.body}`);
+    
+  })
+  
+
 } else if (command === 'read') {
   var foundNote = notes.getNote(argv.title);
   var message = foundNote ? `note ${foundNote.title} was found` : `note not found`
@@ -23,3 +30,5 @@ if (command === 'add') {
 } else {
   console.log('Command not recognized');
 }
+
+//nodemon --inspect-brk filename
