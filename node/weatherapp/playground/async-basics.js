@@ -9,3 +9,7 @@ setTimeout(() => {
 }, 0);
 
 console.log('finishing up');
+
+// call stack
+//   node runs main()
+// which adds and removes all statements from the call stack
