@@ -1,12 +1,25 @@
 const fs = require('fs');
-const os = require('os');
-var user = os.userInfo();
-const notes = require('./notes.js')
+const _ = require('lodash');
+const yargs = require('yargs');
+const notes = require('./notes.js');
+const argv = yargs.argv;
+var command = argv._[0];
 
-
-notes.log();
-// console.log('notes', notes.log());
-var add = notes.add(1, 2);
-console.log('TCL: add', add)
-
-
+if (command === 'add') {
+  var note = notes.addNote(argv.title, argv.body);
+  console.log('note submitted ==>', note);
+} else if (command === 'list') {
+  notes.getAll();
+} else if (command === 'read') {
+  var foundNote = notes.getNote(argv.title);
+  var message = foundNote ? `note ${foundNote.title} was found` : `note not found`
+  console.log(message);
+  
+} else if (command === 'remove') {
+  var noteRemoved = notes.removeNote(argv.title);
+  var message = noteRemoved ? `Note ${argv.title} was removed` : 'note not found';
+	console.log('TCL: message', message)
+  
+} else {
+  console.log('Command not recognized');
+}
