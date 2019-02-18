@@ -110,14 +110,76 @@ class LinkedList{
             this.unshift(val);
         }
         var newNode = new Node(val);
+
         var nodeLeft = this.get(index-1);
         if(nodeLeft){
             newNode.next = nodeLeft.next;
             nodeLeft.next = newNode;
             this.length++
-            return true;    
-        }else{
-            return false;
-        }  
+            return true    
+        }
+    }
+
+      remove(index){
+        if(index < 0 || index >= this.length){
+            return undefined
+        }
+        if(index === this.length - 1){
+            return this.pop();
+        }
+        if(index === 0){
+            return this.shift();
+        }
+
+        var previousNode = this.get(index-1);
+        var removed = previousNode.next;
+        previousNode.next = removed.next;
+
+        this.length--;
+        return removed;
+    }
+
+    print(){
+        var arr =[];
+        var current = this.head
+        while(current){
+            arr.push(current.val)
+            current = current.next;
+        }
+        console.log(arr);
+    }
+
+    reverse(){
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        
+        var next;
+        var prev = null;
+        
+        for(var i = 0; i < this.length ; i++){
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        } 
+        return this;
     }
 }
+// var list = new LinkedList()
+// list.push("Hello");
+// list.push("World!");
+// list.push("!");
+
+// Insertion - O(1) at the begining and the end;
+// Removal - O(1) or O(N);
+    // - If we are removing from the begining. O(1);
+    // - If We are removing from the end. O(N);
+// Searching - O(N);
+// Access - O(N);
+// Singly Linked Lists are a great alteratntive to array 
+// when insertion and deletion at the begining frequently are required.
+// Linked List do not contain a built in index.
+// The idea of a list data structure that consists of nodes is the foundation
+// for other data structures like stacks and ques. 
+

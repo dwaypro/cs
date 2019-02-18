@@ -1,3 +1,6 @@
+// insertion sort is good at inserting new elements, where
+// data is coming in live. 
+
 function insertionSort(arr){
     
     for(var i = 1; i < arr.length; i++){
