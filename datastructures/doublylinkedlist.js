@@ -154,3 +154,9 @@ class DoublyLinkedList{
 
     }
 }
+
+//Big O of Doubly Linked List
+// insertion - O(1)
+// Removal - O(1)
+// Searching - O(N);
+// Access - O(N);
