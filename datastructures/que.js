@@ -52,4 +52,11 @@ class Queue{
 // que.dequeue()
 // //1
 // que.dequeue();
-//2
+   //2
+
+//BIG O 
+// insertion - O(1);
+// Removal   - O(1);
+// Searching  - O(N);
+// Access - O(N);
+ 
