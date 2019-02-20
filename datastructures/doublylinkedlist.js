@@ -126,7 +126,7 @@ class DoublyLinkedList{
         var newNode = new Node(val);
         var nodeLeft = this.get(index-1);
         var nodeRight = this.get(index);
-        
+
         if(nodeLeft){
             newNode.next = nodeRight
             newNode.prev = nodeLeft;
@@ -137,12 +137,20 @@ class DoublyLinkedList{
             this.length++
             return true    
         }
-  
+    }
+
+    remove(index){
+       if(index < 0 || index >= this.length) return undefined;
+       if(index === 0 ) return this.shift(); 
+       if(index === this.length -1) return this.pop(index);
+        
+        var nodeToBeRemoved = this.get(index);
+        nodeToBeRemoved.prev.next = removedNode.next;
+        nodeToBeRemoved.next.prev = removedNode.prev;
+        nodeToBeRemoved.next =null;
+        nodeToBeRemoved.prev =null;
+        this.length--;
+        return nodeToBeRemoved; 
 
     }
 }
-var list = new DoublyLinkedList()
-list.push('a');
-list.push('b');
-list.push('c');
-
