@@ -83,6 +83,11 @@ tree.insert(2);
 tree.insert(16);
 tree.insert(7);
 
+
+//dependent on the structure of the tree. FOr example
+// a completely one sided tree will slow things down tremendously. 
+// pick a better root node. 
+
 // insertion - O(log n);
 // searching - O(log n);
 
