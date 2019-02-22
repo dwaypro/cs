@@ -73,3 +73,7 @@ ht.set("Hello World", "goodbye!!")
 ht.set("World", "!!")
 ht.set("Hello", "bye!!")
 ht.set("Hell World", "good!!")
+
+//insert O(1);
+//Deletion: O(1);
+//Access: O(1);
