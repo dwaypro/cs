@@ -35,9 +35,40 @@ class HashTable{
       }
       return false;    
     }
+
+    keys(){
+       let values = [];
+        for(let i = 0; i < this.keyMap.length; i++){
+            if(this.keyMap[i]){
+                for(let j = 0; j < this.keyMap[i].length; j++){
+                    if(!values.includes(this.keyMap[i][j][0])){
+                        values.push(this.keyMap[i][j][0]);    
+                    }                    
+                }
+            }
+        }
+
+        return values;
+    }
+
+    values(){
+        let values = [];
+        for(let i = 0; i < this.keyMap.length; i++){
+            if(this.keyMap[i]){
+                for(let j = 0; j < this.keyMap[i].length; j++){
+                    if(!values.includes(this.keyMap[i][j][1])){
+                        values.push(this.keyMap[i][j][1]);    
+                    }
+                    
+                }
+            }
+        }
+
+        return values;
+    }
 }
 
-let ht = new HashTable();
+let ht = new HashTable(4);
 ht.set("Hello World", "goodbye!!")
 ht.set("World", "!!")
 ht.set("Hello", "bye!!")
