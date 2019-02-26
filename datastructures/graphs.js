@@ -32,5 +32,48 @@
 
  // most data in the real-world tends to lend itself to sparser
  // and/or larger graphs. Tons of nodes, but not many edges. 
- 
+
+ class Graph{
+    constructor(){
+        this.adjacencyList = {};
+    }
     
+    addVertex(vertex){
+        if(!this.adjacencyList[vertex]){
+            this.adjacencyList[vertex] = [];    
+        }        
+    }
+
+    addEdge(v1, v2){
+        //add error handling to ensure existance of elements.
+        if(this.adjacencyList[v1]){
+            this.adjacencyList[v1].push(v2);    
+        }
+        
+        if(this.adjacencyList[v2]){
+            this.adjacencyList[v2].push(v1);    
+        }        
+    }
+
+    removeEdge(v1, v2){
+        // add error handling to ensure existance of elements
+        this.adjacencyList[v1] = this.adjacencyList[v1].filter( v => v !== v2);
+        this.adjacencyList[v2] = this.adjacencyList[v1].filter( v => v !== v1);
+    }
+
+    removeVertex(v){
+        while(this.adjacencyList[v].length){
+            const adjacenctVertex = this.adjacencyList[v].pop();
+            this.removeEdge(vertex, adjacenctVertex);
+        } 
+        delete this.adjacencyList[v];
+    }
+
+}
+
+var graph = new Graph();
+
+graph.addVertex("Tokyo");
+graph.addVertex("Dallas");
+graph.addVertex("Boulder");
+graph.addVertex("Bend");   
