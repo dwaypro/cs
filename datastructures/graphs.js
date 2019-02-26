@@ -17,7 +17,20 @@
     // - we have vertices and edges and we need to store it. 
     // - two dimential structure usually nested arrays. 
     // - between any two nodes     
+    // takes up more space in sparse graphs
+    // slower to iterate over all edges
+    // faster to lookup specific edge. 
 // Adjacency List
     // - use an array or preferable a hashtable or list to store the edges
     // - go to index 3 of our array for example, which
-    // will return the connection.     
+    // will return the connection.
+    // can take up less space in sparse graphs where there 
+    // arent as many edges
+    // faster to iterate over the edges
+    // can be slower to lookup specific edge
+ // add vertex O(1)    
+
+ // most data in the real-world tends to lend itself to sparser
+ // and/or larger graphs. Tons of nodes, but not many edges. 
+ 
+    
