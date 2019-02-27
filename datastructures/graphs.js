@@ -90,7 +90,7 @@
         })(vertex)
         return result;    
     }
-    
+
     DFSITER(vertex){
         var result =[];
         var visited = {};
@@ -114,6 +114,31 @@
         }
         return result;
     }
+
+    BFS(vertex){
+        var result =[];
+      var visited = {};
+      var queue = [vertex];
+      var adjacencyList = this.adjacencyList;
+      
+      let currentVertex;
+      visited[vertex] = true;
+      
+      while(queue.length){
+          currentVertex = queue.shift();
+          result.push(currentVertex);
+          
+          this.adjacencyList[currentVertex].forEach(function(neighbor){
+             if(!visited[neighbor]){
+                 visited[neighbor] = true;
+                 queue.push(neighbor)
+             } 
+          });
+
+      }
+      return result;
+  }
+  
 }
 
 var graph = new Graph();
