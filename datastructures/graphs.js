@@ -69,11 +69,46 @@
         delete this.adjacencyList[v];
     }
 
+    DFS(vertex){
+        var result = [];
+        var visited = {};
+        console.log('vertex', vertex)
+        var adjacencyList = this.adjacencyList;
+        console.log('this.adjacencyList', this.adjacencyList);
+        (function dfs(v){
+           if(!v) return null;           
+           visited[v] = true;
+           result.push(v);
+
+           console.log('adjacencyList[v]', adjacencyList)
+           var adjacencyItems = adjacencyList[v];
+
+           adjacencyItems.forEach(function(item){
+               var itemVisited = visited[item];
+               if(!itemVisited) return dfs(item);
+           })            
+        })(vertex)
+        return result;    
+    }
 }
 
 var graph = new Graph();
+graph.addVertex("A")
+graph.addVertex("B")
+graph.addVertex("C")
+graph.addVertex("D")
+graph.addVertex("E")
+graph.addVertex("F")
 
-graph.addVertex("Tokyo");
-graph.addVertex("Dallas");
-graph.addVertex("Boulder");
-graph.addVertex("Bend");   
+graph.addEdge("A", "B")
+graph.addEdge("A", "C")
+graph.addEdge("B", "D")
+graph.addEdge("C", "E")
+graph.addEdge("D", "E")
+graph.addEdge("D", "F")
+graph.addEdge("E", "F")
+console.log('adjacencyList', graph.adjacencyList)
+
+graph.DFS("A");
+
+//["A", "B", "D", "E", "C", "F"]
