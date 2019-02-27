@@ -90,6 +90,30 @@
         })(vertex)
         return result;    
     }
+    
+    DFSITER(vertex){
+        var result =[];
+        var visited = {};
+        var stack = [vertex];
+        var adjacencyList = this.adjacencyList;
+        
+        let currentVertex;
+        visited[vertex] = true;
+        
+        while(stack.length){
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+            
+            this.adjacencyList[currentVertex].forEach(function(neighbor){
+               if(!visited[neighbor]){
+                   visited[neighbor] = true;
+                   stack.push(neighbor)
+               } 
+            });
+
+        }
+        return result;
+    }
 }
 
 var graph = new Graph();
