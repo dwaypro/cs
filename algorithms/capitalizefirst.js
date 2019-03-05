@@ -16,7 +16,7 @@ function capitalizeFirst(stringArray){
              return;
         }else{
             var newString = strArray[strArray.length - 1][0].toUpperCase() + strArray[strArray.length-1].slice(1);
-             strArray[strArray.length-1] = newString;               
+            strArray[strArray.length-1] = newString;               
             capitalizedArray.unshift(strArray[strArray.length-1]);
             strArray.pop()
             return cap(strArray) 
