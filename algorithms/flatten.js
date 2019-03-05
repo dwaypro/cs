@@ -1,12 +1,30 @@
+/*
+* Write a recursive function called flatten which accepts
+an array of strings and returns a new array with all values
+flattened. 
+*/
+
+/**
+ * natural instinct is to solve this not recursively.
+ * join all arrays (essentially flattens), split at ',' 
+ * then map the resulting strings back to integers
+ * per requirement for the testing suite
+ */
 function flatten(arr){ 
     array2.join().split(',').map(function(item){
      return item = parseInt(item);
- });
- 
+    });
  }
  
- 
- function flatten2(arr){
+ /**
+  * 
+  * Iterate over all values of the 'old array'
+  * use Array.isArray to validate arr[i] is an array
+  * if it is an array concat that array into newArr and call flatten2 again to check if array
+  * else push the value into the new array.
+  * @param oldArr is an array of strings 
+  */
+ function flatten2(oldArr){
      var newArr = []
        for(var i = 0; i < oldArr.length; i++){
          if(Array.isArray(oldArr[i])){
