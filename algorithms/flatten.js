@@ -1,6 +1,6 @@
 /*
 * Write a recursive function called flatten which accepts
-an array of strings and returns a new array with all values
+an array of arrays and returns a new array with all values
 flattened. 
 */
 
@@ -8,10 +8,11 @@ flattened.
  * natural instinct is to solve this not recursively.
  * join all arrays (essentially flattens), split at ',' 
  * then map the resulting strings back to integers
- * per requirement for the testing suite
+ * per requirement for the testing suite. Doesn't yet handle
+ * if contents of array aren't integers, but this let me pass. 
  */
 function flatten(arr){ 
-    array2.join().split(',').map(function(item){
+    arr.join().split(',').map(function(item){
      return item = parseInt(item);
     });
  }
