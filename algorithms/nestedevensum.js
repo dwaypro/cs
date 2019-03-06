@@ -30,7 +30,7 @@ function iseven(int){
   }
   
   /**
-   * nestedEvenSum attempts to iterate over all fields of keys.
+   * nestedEvenSum attempts to iterate over all fields for a given object.
    * if an integer is found add to the sum, that is eventually returned.
    * if another object is found call addKeys again recursively. 
    * @param {*} obj obj for which all even integers will be summed
