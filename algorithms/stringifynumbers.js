@@ -44,7 +44,6 @@ function isInteger(int){
    * @param {*} obj obj for which all even integers will be summed
    */
   function stringifyNumbers(obj){
-      console.log('obj', obj);
       var newObj = Object.assign({}, obj);
       (function findIntegers(newObj){
           
