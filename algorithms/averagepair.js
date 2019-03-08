@@ -16,7 +16,8 @@ function average(val1, val2){
 }
 
 /**
- * Returns true if any pair in a given array maches the target average.
+ * Using the 'Multiple Pointer' approach, Returns true if any pair in a given array maches the target average.
+ * Time complexity o(N);
  * @param arr the sorted array where the pairs are checked.
  * @param target the target average.
  */
